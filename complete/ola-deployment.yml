@@ -1,0 +1,14 @@
+apiVersion: apps.openliberty.io/v1
+kind: OpenLibertyApplication
+metadata:
+  name: gs-rest-service
+  namespace: default
+spec:
+  replicas: 2
+  applicationImage: ghcr.io/majguo/gs-rest-service
+  pullPolicy: Always
+  service:
+    type: LoadBalancer
+    port: 80
+    targetPort: 8080
+  
